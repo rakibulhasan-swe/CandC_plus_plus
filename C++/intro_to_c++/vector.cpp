@@ -3,7 +3,14 @@ using namespace std;
 
 int main()
 {
-    vector<int> v= {2,5,1,9,7};
+    int n;
+    cin >> n;
+    vector<int> v;
+    v.resize(n);
+
+    for(int i=0; i<v.size(); i++)
+        cin >> v[i];
+
     reverse(v.begin(),v.end());
 
     for(int i=0; i<v.size(); i++)
