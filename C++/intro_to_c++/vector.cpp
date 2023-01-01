@@ -1,3 +1,4 @@
+// will use vector in replace for array
 #include<bits/stdc++.h>
 using namespace std;
 
