@@ -1,1 +1,1 @@
-# C/C++ Full journey (PHITRON)
+# C/C++ Full journey
