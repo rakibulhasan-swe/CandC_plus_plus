@@ -29,7 +29,7 @@ int main() {
         if(cnt%2 == 0){
             cout << sum << endl;
         }else{
-            cout << sum - 2*( min_element(b)) << "\n";
+            cout << sum -  << "\n";
         }
 
         cout << sum << endl;
