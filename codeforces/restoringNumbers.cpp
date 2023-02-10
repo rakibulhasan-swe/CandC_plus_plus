@@ -8,42 +8,21 @@ int main()
     cin.tie(NULL);
 
     int a, b, c, d, sum_of_3 = 0, i = 0;
-    vector<int>arr(3);
+    vector<int>arr;
 
     cin >> a >> b >> c >> d;
 
     int maxi = max({a, b, c, d});
-
-    if(a == maxi){
-        sum_of_3 = a;
-    }else if(b == maxi){
-        sum_of_3 = b;
-    }else if(c == maxi){
-        sum_of_3 = c;
-    }else if(d == maxi){
-        sum_of_3 = d;
-    }
+    sum_of_3 = maxi;
 
     if(sum_of_3-a!=0)
-    {
-        arr[i] = (sum_of_3-a);
-        i++;
-    }
+        arr.push_back(sum_of_3-a);
     if(sum_of_3-b!=0)
-    {
-        arr[i] = (sum_of_3-b);
-        i++;
-    }
+        arr.push_back(sum_of_3-b);
     if(sum_of_3-c!=0)
-    {
-        arr[i] = (sum_of_3-c);
-        i++;
-    }
+        arr.push_back(sum_of_3-c);
     if(sum_of_3-d!=0)
-    {
-        arr[i] = (sum_of_3-d);
-        i++;
-    }
+        arr.push_back(sum_of_3-d);
 
 
     for(int i=0; i<arr.size(); i++){
