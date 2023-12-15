@@ -50,15 +50,49 @@ void insert_at_position(Node *head, int pos, int v){
     Node* tmp = head;
     for(int i=1; i<=pos-1; i++){
         tmp = tmp->next;
+        if(tmp == NULL){
+            cout << "Invalid Index\n";
+            return;
+        }
     }
     newNode->next = tmp->next;
     tmp->next = newNode;
 }
 
 void insert_at_head(Node *&head, int v){
-    Node* newNode = new Node(v);
+    Node* newNode = new Node(v); 
     newNode->next = head;
     head = newNode;
+}
+
+void delete_from_position(Node *head, int pos){
+    Node *tmp = head;
+    for(int i=1; i<=pos-1; i++){
+        tmp = tmp->next;
+        if(tmp == NULL){
+            cout << "Invalid Index\n";
+            return;
+        }
+    }
+    if(tmp->next == NULL){
+        cout << "Invalid Index\n";
+        return;
+    }
+    Node *deleteNode = tmp->next;
+    tmp->next = tmp->next->next;
+
+    delete deleteNode;
+}
+
+void delete_from_head(Node *&head){
+    if(head == NULL){
+        cout << "Head is missing\n";
+        return;
+    }
+    Node *deleteNode = head;
+    head = head->next;
+
+    delete deleteNode;
 }
 
 int main()
@@ -82,6 +116,11 @@ int main()
             else insert_at_position(head, pos, v);
             
         }else if(op == 3){
+            int pos; cin >> pos;
+
+            if(pos == 0) delete_from_head(head);
+            else delete_from_position(head, pos);
+        }else if(op == 4){
             break;
         }
         print_link_list(head);
